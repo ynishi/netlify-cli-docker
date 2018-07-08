@@ -1,0 +1,10 @@
+version: '2'
+
+vars:
+  TARGET: node-cli-docker
+
+tasks:
+  build:
+    desc: build docker image
+    cmds:
+      - docker build -t {{.TARGET}} . --no-cache
