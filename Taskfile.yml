@@ -1,10 +1,20 @@
 version: '2'
 
 vars:
-  TARGET: node-cli-docker
+  REPO: ynishi
+  TARGET: netlify-cli-docker
+  VERSION: 11.4.0-alpine-1.2.2-patched.9
 
 tasks:
   build:
     desc: build docker image
     cmds:
       - docker build -t {{.TARGET}} . --no-cache
+      - docker build -t {{.REPO}}/{{.TARGET}}:latest .
+      - docker build -t {{.REPO}}/{{.TARGET}}:{{.VERSION}} .
+  push:
+    desc: push docker image
+    cmds:
+      - docker push {{.REPO}}/{{.TARGET}}:latest
+      - docker push {{.REPO}}/{{.TARGET}}:{{.VERSION}}
+
