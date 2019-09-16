@@ -6,7 +6,7 @@ netlify-cli docker image
 
 ## Usage
 ```
-docker run --rm --it -v $(pwd):/project -w /project ynishi/netlify-cli-docker netlify
+docker run --rm -it -v $(pwd):/project -w /project ynishi/netlify-cli-docker netlify
 ```
 ### Build
 * install task https://github.com/go-task/task 
