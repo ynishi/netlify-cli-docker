@@ -1,8 +1,7 @@
-FROM node:11.4.0-alpine
+FROM node:13.1.0-alpine3.10
 
-ENV VERSION 11.4.0-alpine-1.2.2-patched.9
+ENV VERSION 13.1.0-alpine3.10-2.21.0
 
 RUN set eux; \
-  yarn global add @lbatchelor/netlify-cli@1.2.2-patched.9 \
-  && ln -s /usr/local/bin/netlify-patched /usr/local/bin/netlify \
+  yarn global add netlify-cli@2.21.0 \
   && netlify --version
